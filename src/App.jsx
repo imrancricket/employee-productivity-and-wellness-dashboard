@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { useThemeContext } from "./theme/ThemeContextProvider";
 import Routers from "./routes/Routers";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Chatbot from "./components/chatBotUi";
 
 
@@ -13,10 +13,10 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <BrowserRouter>
+        <HashRouter>
           <Chatbot />
           <Routers />
-        </BrowserRouter>
+        </HashRouter>
       </ThemeProvider>
     </>
   );

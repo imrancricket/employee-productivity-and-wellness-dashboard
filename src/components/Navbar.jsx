@@ -128,7 +128,7 @@ export default function PersistentDrawerLeft() {
                             <MenuIcon />
                         </IconButton>
                         {/* <img src={logo_main} style={{ width: "inherit", height: 80 }} /> */}
-                        <p style={{fontSize: 25, fontWeight:"bold",color:"#4a5568"}}>Employee Productivity and Wellness</p>
+                        <p style={{fontSize: 25, fontWeight:"bold",color:"#4a5568"}}>Team Productivity and Wellness</p>
                         <Box>
                             <ThemeSwitcher />
                         </Box>

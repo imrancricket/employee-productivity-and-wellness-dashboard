@@ -25,7 +25,7 @@ const SignIn = ({setIsAuthenticated}) => {
 
 
   const handleLogin = () => {
-    if (email === "user@example.com" && password === "password123") {
+    if (email === "user@example.com" && password === "U2FsdGVkX1+9rqxFXdiFMZR1iM+ndzjgCFsHbNJEwRi1Czi70dgOFaHgIbbck3D2") {
       alert("Login Successful!");
       navigate("/dashboard")
     } else {
@@ -129,7 +129,7 @@ const SignIn = ({setIsAuthenticated}) => {
           Forgot password?
         </Link>
         <Typography variant="body2" sx={{ mt: 2 }}>
-          Don’t have an account?{" "}
+          Don't have an account?{" "}
           <Link href="#" underline="hover">
             Sign up
           </Link>
@@ -140,3 +140,12 @@ const SignIn = ({setIsAuthenticated}) => {
 };
 
 export default SignIn;
+
+
+
+
+
+
+
+
+

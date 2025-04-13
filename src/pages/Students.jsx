@@ -29,10 +29,15 @@ const Students = () => {
   const { vertical, horizontal, open } = snackState;
   const [snackMessage, setSnackMessage] = useState("");
   const [error, setError] = useState("");
+  const [isError, setIsError] = useState("");
 
   const dispatch = useDispatch();
 
   const handleSubmitExtraFeedback = () => {
+    if (extraFeedbackText.trim().length <= 0) {
+      setIsError("Required*");
+      return;
+    }
     setSnackState({ vertical: "top", horizontal: "center", open: true });
     setOpenModal(false);
   };
@@ -101,7 +106,7 @@ const Students = () => {
               <DialogContentText id="alert-dialog-description">
                 <div>
                   <h4 style={{ fontSize: "16px" }}>
-                    Tell us about something you’re proud of this week!
+                    Tell us about something you're proud of this week!
                   </h4>
                   <RadioGroup
                     aria-labelledby="demo-row-radio-buttons-group-label"
@@ -124,7 +129,7 @@ const Students = () => {
                     <FormControlLabel
                       value="0"
                       control={<Radio size={"small"} />}
-                      label="Not this time, but I’m trying!"
+                      label="Not this time, but I'm trying!"
                     />
                   </RadioGroup>
                 </div>
@@ -135,6 +140,7 @@ const Students = () => {
                       placeholder="Tell us what you did"
                       value={extraFeedbackText}
                       onChange={(e) => setExtraFeedbackText(e.target.value)}
+                      helperText={isError}
                     />
                   </div>
                 )}
@@ -155,12 +161,12 @@ const Students = () => {
                 onClick={() => {
                   if (showTextField) {
                     setSnackMessage(
-                      "Great job! You've unlocked the ⭐ ‘Extra Mile’ badge!"
+                      "Great job! You've unlocked the ⭐ 'Extra Mile' badge!"
                     );
                     dispatch(setBadge("Extra Mile"));
                   } else {
                     setSnackMessage(
-                      "That’s okay! Progress is a journey — keep going, you’re doing great 💪"
+                      "That's okay! Progress is a journey — keep going, you're doing great 💪"
                     );
                   }
                   handleSubmitExtraFeedback();
